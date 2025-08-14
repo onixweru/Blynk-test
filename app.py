@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Tokenul Blynk (înlocuiește cu al tău)
-BLYNK_TOKEN = "hueAZAw4qXtTBS9FQ8ZsYjGDwJHWwMe8"
+BLYNK_TOKEN = ""
 BLYNK_BASE_URL = "https://fra1.blynk.cloud/external/api/update"
 
 @app.route("/start", methods=["GET"])
