@@ -4,16 +4,16 @@ import requests
 app = Flask(__name__)
 
 # Tokenul tău Blynk
-BLYNK_TOKEN = "XYZ"  # înlocuiește cu tokenul tău real
+BLYNK_TOKEN = "hueAZAw4qXtTBS9FQ8ZsYjGDwJHWwMe8"  # înlocuiește cu tokenul tău real
 
 @app.route('/proxy', methods=['GET'])
 def proxy():
     # Preia parametrii din URL
-    pin = request.args.get('pin', 'D1')
-    value = request.args.get('value', '1')
+    virtual_pin = request.args.get('v', '1')  # v1, v2, etc.
+    value = request.args.get('value', '1')    # 1 sau 0
 
     # URL-ul real Blynk
-    blynk_url = f"https://fra1.blynk.cloud/external/api/update?token={BLYNK_TOKEN}&pin={pin}&value={value}"
+    blynk_url = f"https://fra1.blynk.cloud/external/api/update?token={BLYNK_TOKEN}&v{virtual_pin}={value}"
 
     try:
         resp = requests.get(blynk_url)
