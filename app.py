@@ -13,7 +13,7 @@ def proxy():
     value = request.args.get('value', '1')    # 1 sau 0
 
     # URL-ul real Blynk
-    blynk_url = f"https://fra1.blynk.cloud/external/api/update?token={BLYNK_TOKEN}&{virtual_pin}={value}"
+    blynk_url = f"https://fra1.blynk.cloud/external/api/update?token={BLYNK_TOKEN}&v{virtual_pin}={value}"
 
     try:
         resp = requests.get(blynk_url)
